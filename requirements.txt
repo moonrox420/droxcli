@@ -1,0 +1,17 @@
+# DroxCLI — runtime dependencies
+httpx>=0.27.0          # Ollama API calls
+pydantic>=2.0.0        # Model validation
+colorama>=0.4.6        # Terminal colours
+
+# Optional — structured logging
+# structlog>=24.0.0
+
+# Optional — Arrow / Parquet / CSV dataset support in RAG indexer
+# Install to enable .arrow and .parquet file indexing
+# pyarrow>=14.0.0
+
+# ── Safety layer tools (invoked as subprocesses) ──────────────────────────
+# black>=24.0.0
+# ruff>=0.4.0
+# mypy>=1.9.0
+# pytest>=8.0.0

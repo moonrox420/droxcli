@@ -1,0 +1,45 @@
+[build-system]
+requires      = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name        = "droxcli"
+version     = "0.2.0"
+description = "Agentic coding tool powered by Ollama"
+readme      = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.27.0",
+    "pydantic>=2.0.0",
+    "colorama>=0.4.6",
+]
+
+[project.scripts]
+droxcli = "droxcli.__main__:main"
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.0",
+    "ruff>=0.4",
+    "mypy>=1.9",
+    "pytest>=8.0",
+]
+data = [
+    "pyarrow>=14.0.0",   # enables .arrow and .parquet RAG indexing
+]
+full = [
+    "black>=24.0",
+    "ruff>=0.4",
+    "mypy>=1.9",
+    "pytest>=8.0",
+    "pyarrow>=14.0.0",
+    "structlog>=24.0.0",
+]
+
+[tool.setuptools.packages.find]
+where   = ["."]
+include = ["droxcli*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts   = "-q --tb=short"
